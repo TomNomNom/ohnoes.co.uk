@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>oh noes! waht you doen?!</title>
+    <style>
+      body {
+        background: #F00;
+      }
+
+      h1, h2 {
+        font-size: 1000%;
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 400%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="ohNoes">Oh noes!</h1>
+    <h2 id="wat">waht you doen?!</h2>
+    
+    <script>
+      //I'm aware that this javascript is shit
+      var ohNoes = document.getElementById('ohNoes'); 
+      var wat = document.getElementById('wat'); 
+      var b = document.getElementsByTagName('body');
+      b = b[0];
+      
+      var bgColors = [];
+      bgColors[0] = '#F00';
+      bgColors[1] = '#0F0';
+      bgColors[2] = '#00F';
+      
+      var fColors = [];
+      fColors[0] = '#00F';
+      fColors[1] = '#F00';
+      fColors[2] = '#0F0';
+
+      var i = 0;
+
+      function flash()
+      {
+        if (i > bgColors.length)
+        {
+          i = 0;
+        }
+        
+        ohNoes.style.color = fColors[i];
+        wat.style.color = fColors[i];
+        b.style.backgroundColor = bgColors[i];
+        ++i;
+      }
+
+      setInterval(flash, 40);
+    </script> 
+  </body>
+</html>
